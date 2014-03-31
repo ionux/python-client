@@ -12,7 +12,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 Bitcoin Python payment library using the bitpay.com service.
-Version 1.0
+Version 1.1
 """
 
 import bp_options
@@ -66,6 +66,7 @@ def bpCurl(url, apiKey, post = False):
         opener.addheaders = [
             ('Content-Type', 'application/json'),
             ('Authorization', 'Basic ' + uname),
+            ('X-BitPay-Plugin-Info', 'pythonlib1.1'),
         ] 
 
         if post:
