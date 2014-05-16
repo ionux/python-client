@@ -30,11 +30,13 @@ import urllib
 
 def bpLog(contents):
     """
+    
     Writes contents to a log file specified in the bp_options file or, if missing,
     defaults to a standard filename of 'bplog.txt'.
     
     @param mixed contents
     @return
+    """
     """
     if bp_options.bpOptions['logFile'] != "":
         file = os.path.realpath(__file__) + bp_options.bpOptions['logFile']
@@ -46,7 +48,7 @@ def bpLog(contents):
     with open(file, "a") as log_file:
         log_file.write(time.strftime('%m-%d %H:%M:%S') + ": ")
         log_file.write(json.dumps(contents) + "\n")
-
+    """
 def bpCurl(url, apiKey, post = False):
     """
     Handles post/get to BitPay via curl.
@@ -158,12 +160,6 @@ def bpCreateInvoice(orderId, price, posData, options = {}):
     pos = json.dumps(pos);
 
     response = bpCurl('https://bitpay.com/api/invoice/', options['apiKey'], pos);
-
-    if bp_options.bpOptions['useLogging']:
-        bpLog('Create Invoice: ')
-        bpLog(pos)
-        bpLog('Response: ')
-        bpLog(response)
 
     return response
 
