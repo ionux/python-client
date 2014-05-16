@@ -61,9 +61,6 @@ bpOptions['fullNotifications'] = 'true';
 # transaction speed: low/medium/high.   See API docs for more details.
 bpOptions['transactionSpeed'] = 'low'; 
 
-# Logfile for use by the bpLog function.  Note: ensure the web server process has write access
-# to this file and/or directory!
-bpOptions['logFile'] = '/bplog.txt';
 
 # Change to 'true' if you would like automatic logging of invoices and errors.
 # Otherwise you will have to call the bpLog function manually to log any information.
