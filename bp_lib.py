@@ -50,13 +50,14 @@ def bpLog(contents):
         log_file.write(json.dumps(contents) + "\n")
     """
 def bpCurl(url, apiKey, post = False):
+    global response
     """
     Handles post/get to BitPay via curl.
     
     @param string url, string apiKey, boolean post
     @return mixed response
     """
-
+    response = ""
     if url.strip() != '' and apiKey.strip() != '':
     
         cookie_handler= urllib2.HTTPCookieProcessor()
@@ -204,7 +205,7 @@ def bpGetInvoice(invoiceId, apiKey=False):
     if not apiKey:
       apiKey = bp_options.bpOptions['apiKey']
 
-    response = bpCurl('https://bitpay.com/api/invoice/'.invoiceId, apiKey)
+    response = bpCurl('https://bitpay.com/api/invoice/'+invoiceId, apiKey)
 
     response['posData'] = json.loads(response['posData'])
     response['posData'] = response['posData']['posData']

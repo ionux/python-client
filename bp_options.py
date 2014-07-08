@@ -59,7 +59,7 @@ bpOptions['physical'] = 'true';
 bpOptions['fullNotifications'] = 'true';
 
 # transaction speed: low/medium/high.   See API docs for more details.
-bpOptions['transactionSpeed'] = 'low'; 
+bpOptions['transactionSpeed'] = 'high'; 
 
 
 # Change to 'true' if you would like automatic logging of invoices and errors.
